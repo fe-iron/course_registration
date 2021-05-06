@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="{% static 'assets/css/register.css' %}">
+    </head>
+
+    <body>
+        <div class="container">
+          <h1>Sign Up</h1>
+            <form method="post" action="login">
+              <label>Email Address</label><br>
+                <input type="email" name="email"><br>
+
+                <label>Password</label><br>
+                <input type="password" name="password"><br>
+                <button type="submit" style="cursor: pointer">Create Account</button>
+                <div style="display: inline-flex">
+                <input type="checkbox" style="margin-top: 13px;"><label> Remember me</label></div>
+            </form>
+        </div>
+    </body>
+</html>

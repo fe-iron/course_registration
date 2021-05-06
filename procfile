@@ -1,0 +1,1 @@
+web: gunicorn course_registration.wsgi --log-file -

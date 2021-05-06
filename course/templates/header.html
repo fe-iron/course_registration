@@ -1,0 +1,97 @@
+{% load static %}
+    <!--HEADER-->
+    <header>
+        <div id="csi-header" class="csi-header csi-banner-header">
+            <div class="header-top">
+                <div class="header-top-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="contact">
+                                    <ul class="list-inline">
+                                        <li><i class="icofont icofont-ui-call"></i> +8934-3489-87774</li>
+                                        <li><i class="icofont icofont-ui-message"></i>edumaster@edu.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="right-menu">
+                                    <ul class="list-inline csi-social">
+                                        <li><a href="#"><i class="icofont icofont-social-twitter"></i></a></li>
+                                        <li><a href="#"><i class="icofont icofont-social-facebook"></i></a></li>
+                                        <li><a href="#"><i class="icofont icofont-social-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="icofont icofont-social-instagram"></i></a></li>
+                                        <li><a href="#"><i class="icofont icofont-youtube-play"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!--//.header-top-->
+            <div class="csi-header-bottom csi-header-bottom-transparent ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <nav class="navbar navbar-default csi-navbar">
+                                <div class="container">
+                                    <nav class="navbar navbar-default csi-navbar">
+                                        <div class="csicontainer">
+                                            <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                                        data-target=".navbar-collapse">
+                                                    <span class="sr-only">Toggle navigation</span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                    <span class="icon-bar"></span>
+                                                </button>
+                                                <div class="csi-logo">
+                                                    <a href="">
+                                                        <img src="{% static 'assets/img/logo.png' %}" alt="Logo"/>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="collapse navbar-collapse">
+                                                <ul class="nav navbar-nav csi-nav">
+                                                    <li><a class="csi-scroll" href="/">Home</a></li>
+                                                    <li><a class="csi-scroll" href="about">About</a></li>
+                                                    <li><a class="csi-scroll" href="courses-list">Courses</a></li>
+                                                    <li><a class="csi-scroll" href="teacher-list">Teachers</a></li>
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="login">Existing Student</a></li>
+                                                            <li><a href="signup">New Student</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a class="csi-scroll" href="contact">Contact</a></li>
+                                                    <li>
+                                                        <div id="csi-search">
+                                                            <form action="#" method="post">
+                                                                {% csrf_token %}
+                                                                <input class="search" name="search" placeholder="What're we looking for ?" type="text">
+                                                                <a class="search_submit" href="#">
+                                                                    <span><i class="icofont icofont-ui-search"></i></span>
+                                                                </a>
+                                                            </form>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <!--/.nav-collapse -->
+                                        </div>
+                                    </nav>
+                                </div>
+                                <!-- /.container -->
+                            </nav>
+                        </div>
+                    </div>
+                    <!--//.ROW-->
+                </div>
+                <!-- //.CONTAINER -->
+            </div>
+            <!-- //.INNER-->
+        </div>
+    </header>
+    <!--HEADER END-->
