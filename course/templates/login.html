@@ -9,7 +9,9 @@
     <body>
         <div class="container">
           <h1>Sign Up</h1>
+            <h5 style="color: red; margin-bottom: 12px;">{{msg}}</h5>
             <form method="post" action="login">
+                {% csrf_token %}
               <label>Email Address</label><br>
                 <input type="email" name="email"><br>
 

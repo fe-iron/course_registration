@@ -57,6 +57,15 @@
                                                     <li><a class="csi-scroll" href="about">About</a></li>
                                                     <li><a class="csi-scroll" href="courses-list">Courses</a></li>
                                                     <li><a class="csi-scroll" href="teacher-list">Teachers</a></li>
+                                                    <li><a class="csi-scroll" href="contact">Contact</a></li>
+                                                    {% if user.is_authenticated %}
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hii, {{user.first_name}} <span class="caret"></span></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="logout">Logout</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    {% else %}
                                                     <li class="dropdown">
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
                                                         <ul class="dropdown-menu">
@@ -64,7 +73,7 @@
                                                             <li><a href="signup">New Student</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a class="csi-scroll" href="contact">Contact</a></li>
+                                                    {% endif %}
                                                     <li>
                                                         <div id="csi-search">
                                                             <form action="#" method="post">

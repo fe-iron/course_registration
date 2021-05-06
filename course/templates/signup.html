@@ -9,10 +9,12 @@
     <body>
         <div class="container">
           <h1>Sign Up</h1>
+            <h5 style="color: white; margin-bottom: 12px;">{{msg}}</h5>
             <form method="post" action="signup">
+                {% csrf_token %}
                 <label>Full Name</label><br>
                 <input type="text" name="name"><br>
-              <label>Email Address</label><br>
+                <label>Email Address</label><br>
                 <input type="email" name="email"><br>
                 <label>Date of Birth</label><br>
                 <input type="date" name="dob"><br>
