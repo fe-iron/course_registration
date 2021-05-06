@@ -72,6 +72,10 @@ def signup(request):
             reg = Registration(user=user, name=name, fname=fname, mname=mname, dob=dob, email=email)
             reg.save()
 
+            user = auth.authenticate(username=email, password=password)
+            if user is not None:
+                auth.login(request, user)
+                
             return redirect("/")
     return render(request, "signup.html")
 
