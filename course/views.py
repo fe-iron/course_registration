@@ -75,7 +75,7 @@ def signup(request):
             user = auth.authenticate(username=email, password=password)
             if user is not None:
                 auth.login(request, user)
-                
+
             return redirect("/")
     return render(request, "signup.html")
 
