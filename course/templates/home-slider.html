@@ -31,7 +31,9 @@
                                                                 <h2 class="csi-title">ARE YOU READY?</h2>
                                                                 <p class="text">We envision a world where anyone, anywhere has the power to transform their life through learning. </p>
                                                                 <div class="btn-area">
+                                                                    {% if not user.is_authenticated %}
                                                                     <a class="csi-btn" href="signup">Resister now</a>
+                                                                    {% endif %}
                                                                     <a class="csi-btn csi-btn-brand" href="courses-list">Our Cources</a>
                                                                 </div>
                                                             </div>
@@ -62,7 +64,9 @@
                                                                 <h2 class="csi-title">ARE YOU READY?</h2>
                                                                 <p class="text">An e-learning solution allows employees to access material from anywhere, anytime. Because e-learning materials can be accessed anywhere, employees can access relevant resources any time they encounter a question or difficult situation at work. </p>
                                                                 <div class="btn-area">
+                                                                    {% if not user.is_authenticated %}
                                                                     <a class="csi-btn" href="signup">Resister now</a>
+                                                                    {% endif %}
                                                                     <a class="csi-btn csi-btn-brand" href="courses-list">Our Cources</a>
                                                                 </div>
 
@@ -94,7 +98,9 @@
                                                                 <h2 class="csi-title">ARE YOU READY?</h2>
                                                                 <p class="text">E-learning allows learners tackle the course at their own pace. It allows them to take the course in an environment that is more favorable to their learning style.</p>
                                                                 <div class="btn-area">
+                                                                    {% if not user.is_authenticated %}
                                                                     <a class="csi-btn" href="signup">Resister now</a>
+                                                                    {% endif %}
                                                                     <a class="csi-btn csi-btn-brand" href="courses-list">Our Cources</a>
                                                                 </div>
 
@@ -244,7 +250,9 @@
                                             <li>4 Months(16weeks)</li>
                                             <li>3 sessions of 2 hours in a week.</li>
                                         </ul>
+                                        {% if  not user.is_authenticated %}
                                         <a class="csi-btn registration-btn" href="signup">Registration</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div> <!-- //.Single Course -->
@@ -267,7 +275,9 @@
                                             <li>4 Months(16weeks)</li>
                                             <li>3 sessions of 2 hours in a week.</li>
                                         </ul>
+                                        {% if  not user.is_authenticated %}
                                         <a class="csi-btn registration-btn" href="signup">Registration</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div> <!-- //.Single Course -->
@@ -290,7 +300,9 @@
                                             <li>4 Months(16weeks)</li>
                                             <li>3 sessions of 2 hours in a week.</li>
                                         </ul>
+                                        {% if  not user.is_authenticated %}
                                         <a class="csi-btn registration-btn" href="signup">Registration</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div> <!-- //.Single Course -->
@@ -313,7 +325,9 @@
                                             <li>4 Months(16weeks)</li>
                                             <li>3 sessions of 2 hours in a week.</li>
                                         </ul>
+                                        {% if  not user.is_authenticated %}
                                         <a class="csi-btn registration-btn" href="signup">Registration</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div> <!-- //.Single Course -->
@@ -336,7 +350,9 @@
                                             <li>4 Months(16weeks)</li>
                                             <li>3 sessions of 2 hours in a week.</li>
                                         </ul>
+                                        {% if  not user.is_authenticated %}
                                         <a class="csi-btn registration-btn" href="signup">Registration</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div> <!-- //.Single Course -->
@@ -359,7 +375,9 @@
                                             <li>4 Months(16weeks)</li>
                                             <li>3 sessions of 2 hours in a week.</li>
                                         </ul>
+                                        {% if  not user.is_authenticated %}
                                         <a class="csi-btn registration-btn" href="signup">Registration</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div> <!-- //.Single Course -->
@@ -370,7 +388,9 @@
         </div>
     </section>
     <!--COURSES END-->
-
+{% if user.is_authenticated %}
+    <div></div>
+{% else %}
     <!--REGISTRATION-->
     <section>
         <div id="csi-registration" class="csi-registration">
@@ -393,6 +413,7 @@
         </div>
     </section>
     <!--REGISTRATION END-->
+{% endif %}
 
 
     <!--TEACHERS-->

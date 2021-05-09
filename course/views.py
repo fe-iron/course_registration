@@ -1,7 +1,8 @@
 from django.contrib.auth.models import auth, User
 from django.shortcuts import render, redirect
-from .models import Message, Registration
+from .models import Message, Registration, Courses
 from django.http import JsonResponse
+import random
 
 
 # Create your views here.
@@ -14,7 +15,17 @@ def about(request):
 
 
 def courses_list(request):
-    return render(request, 'courses-list.html')
+    courses = Courses.objects.all()
+
+    while True:
+        a = random.randint(1, 11)
+        if a+5 <= 15:
+            break
+
+    context = {
+        'courses': courses[a:a+5]
+    }
+    return render(request, 'courses-list.html', context)
 
 
 def teacher_list(request):

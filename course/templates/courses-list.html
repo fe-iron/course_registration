@@ -17,7 +17,11 @@
                         <div class="col-xs-12">
                             <div class="csi-heading-area">
                                 <div class="csi-heading csi-heading-white">
+                                    {% if user.is_authenticated %}
+                                    <h2 class="title">Courses you're enrolled in!</h2>
+                                    {% else %}
                                     <h2 class="title">Explore all Courses</h2>
+                                    {% endif %}
                                 </div>
                                 <ul class="breadcrumb">
                                     <li><a href="/"><i class="icon-home6"></i>Home</a></li>
@@ -33,13 +37,43 @@
     </section0>
     <!--Banner END-->
 
-    <!--TEACHERS-->
+    <!--courses-->
     <section>
         <div id="csi-teachers" class="csi-teachers">
             <div class="csi-inner">
                 <div class="container">
                     <div class="csi-course-content">
                         <div class="row">
+                            {% if user.is_authenticated %}
+                                {% for course in courses %}
+                                    <div class="csi-single-course">
+                                <div class="csi-single-course-inner">
+                                    <figure>
+                                        {% if forloop.counter == 1 %}
+                                        <img src="{% static 'assets/img/courses/cours1.jpg' %}" alt="cours">
+                                        {% elif forloop.counter == 2 %}
+                                        <img src="{% static 'assets/img/courses/cours2.jpg' %}" alt="cours">
+                                        {% elif forloop.counter == 3 %}
+                                        <img src="{% static 'assets/img/courses/cours3.jpg' %}" alt="cours">
+                                        {% elif forloop.counter == 4 %}
+                                        <img src="{% static 'assets/img/courses/cours4.jpg' %}" alt="cours">
+                                        {% else %}
+                                        <img src="{% static 'assets/img/courses/cours5.jpg' %}" alt="cours">
+                                        {% endif %}
+
+                                    </figure>
+                                    <div class="course-info">
+                                        <h3 class="title"><a href="#">{{course.title}}</a></h3>
+                                        <p class="text">{{course.desc}}</p>
+                                        <ul class="list-unstyled">
+                                            <li>{{course.duration}}</li>
+                                            <li>{{course.classes}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> <!-- //.Single Course -->
+                                {% endfor %}
+                            {% else %}
                             <div class="csi-single-course">
                                 <div class="csi-single-course-inner">
                                     <figure>
@@ -389,6 +423,7 @@
                                     </div>
                                 </div>
                             </div> <!-- //.Single Course -->
+                            {% endif %}
                         </div> <!-- //.Course Content Area-->
                     </div>
                 </div><!-- //.CONTAINER -->

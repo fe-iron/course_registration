@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Message(models.Model):
     name = models.CharField(max_length=50, null=True, default="no name")
@@ -22,3 +23,10 @@ class Registration(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Courses(models.Model):
+    title = models.CharField(max_length=100)
+    desc = models.TextField()
+    duration = models.CharField(max_length=50, default="4 Months (16 Weeks)")
+    classes = models.CharField(max_length=50, default="3 Sessions of 2 hours in a week")
